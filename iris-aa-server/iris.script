@@ -1,0 +1,32 @@
+zn "%SYS"
+do ##class(Security.Users).PromptForNewPassword()
+SYS
+SYS
+w ##class(Security.Users).UnExpireUserPasswords("*")
+w $zu(1,"irislib",0,0,0,0,0,0,0,0,0,0,0,2),!
+
+zn "USER"
+
+do $system.OBJ.Load("/data/LoanPerformance.xml","cf")
+do $system.OBJ.Load("/data/loans.gof")
+do ##class(User.LoanPerformance).%BuildIndices()
+
+do $system.OBJ.Load("/data/IrisDataset.xml","cf")
+do ##class(DataMining.IrisDataset).load()
+
+do $system.OBJ.Load("/data/Passenger.cls","cf")
+do ##class(Titanic.Passenger).Import()
+
+do $system.OBJ.Load("/data/Loader.xml","cf")
+do $system.OBJ.Load("/data/otherclasses.xml","cf")
+w ##class(Util.Loader).Load("/data/breast-cancer.csv","User.BreastCancer")
+w ##class(Util.Loader).Load("/data/appointment-noshows.csv","User.appointments")
+
+do $system.OBJ.Load("/data/Campaign.cls","cf")
+w ##class(Util.Loader).Load("/data/Campaign.csv","User.Campaign",";")
+
+do $system.OBJ.Load("/data/NLPUtils.cls","cf")
+do $system.OBJ.Load("/data/HateSpeech.xml","cf")
+w ##class(NLP.HateSpeech).Load("/data/hate-speech/")
+
+halt
