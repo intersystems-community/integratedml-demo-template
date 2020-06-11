@@ -77,4 +77,4 @@ Purpose of this template is to provide the simplest tools for data developers to
 
 From there the developer can either go for exploreing the current IntegratedML Syntax (in SQL), or run the data through some ML/DL pipelines on the backend Tensorflow 2.2 engines.  
 
-The above explains how to simply read from and write into IRIS via Python3. Please also refer to Python Gateway template on how to invoke external Python applications or service from within IRIS. 
+The above explains how to simply read from and write into IRIS via Python3. Please also refer to [Python Gateway template](https://openexchange.intersystems.com/package/PythonGateway-Template) on how to invoke external Python applications or service from within IRIS. 
