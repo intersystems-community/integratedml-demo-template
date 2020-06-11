@@ -6,6 +6,12 @@ This is a template for IntegratedML - InterSystems Github repository.
 
 The template also comes with a few example Jupyter notebooks (http://jupyter.org) which demonstrate how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a docker container.
 
+## Demo environment topology
+<p align="center">
+  <img src="environment_topology_demo_template.PNG" width="600" title="docker environment topology after installation">
+</p>
+
+
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
