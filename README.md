@@ -16,7 +16,7 @@ This template creates a docker environment (via "docker-compose up") of 2 pre-co
 3x sample notebook files in this template:
   1. A simple JDBC connection from tf2jupyter into a sample data table (Iris flowers) within IRIS's USER.
   2. The above plus a few pandas data frame operatons and read/wrtie samples data into IRIS's USER.
-  3. The above plus some very basic, initial SQL syntax demox of using IRIS Integrated ML.
+  3. The above plus some very basic, initial SQL syntax demox of using IRIS IntegratedML.
 
 ## Demo environment topology
 <p align="center">
