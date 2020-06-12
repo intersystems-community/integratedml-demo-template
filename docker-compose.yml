@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  irisaasvr:
+  irisimlsvr:
     build:
       context: ./iris-aa-server
     image: iris-aa-server:2020.3AA
