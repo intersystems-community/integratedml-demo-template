@@ -60,7 +60,7 @@ Copy notebook token id
 Open http://localhost:8896/tree  
 Paste in notebook id
 ```
-Note: use "Docker ps" to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost)
+Note: use "Docker ps" to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost
 
 
 ## Starts
