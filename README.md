@@ -75,6 +75,6 @@ Note: use "Docker ps" to confirm tf2juyter's ports; make sure right localhost po
 ## Purpose
 Purpose of this template is to provide the simplest tools for data developers to connect into IRIS database via commonly used Python3 +  Jupyter notebooks. 
 
-From there the developer can either go for exploreing the current IntegratedML Syntax (in SQL), or run the data through some ML/DL pipelines on the backend Tensorflow 2.2 engines.  
+From there the developer can either go for exploring the current IntegratedML Syntax (in SQL), or run the data through their own ML/DL pipelines on Tensorflow2.2 etc backend engine.  
 
-The above explains how to simply read from and write into IRIS via Python3. Please also refer to [Python Gateway template](https://openexchange.intersystems.com/package/PythonGateway-Template) on how to invoke external Python applications or service from within IRIS. 
+The template only explains how to simply read from and write into IRIS via Python3. Please refer to [Python Gateway template](https://openexchange.intersystems.com/package/PythonGateway-Template) on how to invoke external Python applications or services from within IRIS - this work is highly recommended.  
