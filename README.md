@@ -20,7 +20,7 @@ This template creates a docker environment (via "docker-compose up") of 2 pre-co
 
 ## Demo environment topology
 <p align="center">
-  <img src="environment_topology_demo_template.PNG" width="600" title="docker environment topology after installation">
+  <img src="https://raw.githubusercontent.com/intersystems-community/integratedml-demo-template/master/environment_topology_demo_template.PNG" width="600" title="docker environment topology after installation">
 </p>
 
 ## Prerequisites
@@ -34,7 +34,7 @@ This template is tested breifly on AWS Ubuntu, Mac OS, and Windows 10(using Dock
 Clone/git pull the repo into any local directory
 
 ```
-$ git clone https://github.com/tom-dyar/integratedml-demo-template.git
+$ git clone https://github.com/intersystems-community/integratedml-demo-template.git
 ```
 
 Open a Docker terminal in this directory and run:
@@ -51,16 +51,10 @@ $ docker-compose up -d
 
 4. Open browser to access the notebooks
 
-firstly, acquire the Jupyter server token by running
 ```
-$ docker-compose logs tf2jupyter
+http://localhost:8896/tree
 ```
-```
-Copy notebook token id
-Open http://localhost:8896/tree  
-Paste in notebook id
-```
-Note: use "Docker ps" to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost)
+Note: use `docker-compose ps` to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost)
 
 
 ## Starts

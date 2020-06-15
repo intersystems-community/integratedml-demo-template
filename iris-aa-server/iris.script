@@ -1,7 +1,4 @@
 zn "%SYS"
-do ##class(Security.Users).PromptForNewPassword()
-SYS
-SYS
 w ##class(Security.Users).UnExpireUserPasswords("*")
 w $zu(1,"irislib",0,0,0,0,0,0,0,0,0,0,0,2),!
 

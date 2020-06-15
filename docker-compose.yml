@@ -9,23 +9,20 @@ services:
     hostname: irisimlsvr
     restart: on-failure
     ports:
-    - "8091:51773" # 51773 is the superserver default port
-    - "8092:52773" # 52773 is the webserver/management portal port
-    - "8090:2188"  # can be deleted
+    - 8091:51773 # 51773 is the superserver default port
+    - 8092:52773 # 52773 is the webserver/management portal port
     volumes:
-    - "./iris-shared:/shared"
-      
+    - ./iris-shared:/shared
   tf2jupyter:   # tensorflow with jupyter 
     build:
       context: ./tf2-jupyter-jdbc
     image: tf2-jupyter-jdbc:1.0.0-iml-template
-    #command: 
     hostname: tf2jupyter
     restart: on-failure
     ports:
-    - "8896:8888" # 8888 is the docker jupyter service port
-    - "6026:6006" # 6006 is the tensorboard port
+    - 8896:8888 # 8888 is the docker jupyter service port
+    - 6026:6006 # 6006 is the tensorboard port
     volumes:
-    - "./jupyter-samples:/tf"   #shared volumes
+    - ./jupyter-samples:/tf   #shared volumes
 
 
