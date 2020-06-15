@@ -53,7 +53,7 @@ $ docker-compose up -d
 
 firstly, acquire the Jupyter server token by running
 ```
-$ docker logs tf2jupyter
+$ docker-compose logs tf2jupyter
 ```
 ```
 Copy notebook token id
