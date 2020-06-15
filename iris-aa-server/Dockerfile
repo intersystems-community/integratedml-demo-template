@@ -8,6 +8,7 @@ USER irisowner
 
 # copy files
 COPY data /data
+COPY src /data/src
 COPY iris.script /tmp/iris.script
 
 # special extract treatment for hate-speech dataset
@@ -18,4 +19,4 @@ RUN mkdir /data/hate-speech/ \
 RUN iris start IRIS \
 	&& iris session IRIS < /tmp/iris.script
 
-RUN rm -r /data/*
+# RUN rm -r /data/*
