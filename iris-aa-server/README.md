@@ -1,6 +1,6 @@
-# IntegratedML Demo Kit
+# IRIS Advanced Analytics with IntegratedML Demo 
 
-This repo contains a few simple datasets to demonstrate InterSystems IRIS IntegratedML (previously known as QuickML). 
+This folder contains a few simple datasets to demonstrate InterSystems IRIS IntegratedML (previously known as QuickML). The enclosed Dockerfile can be used separately from the rest of the integratedml-demo-template, if you do not want to use the Jupyter Notebook interface.
 
 ## How to build
 
