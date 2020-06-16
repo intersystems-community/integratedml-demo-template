@@ -37,10 +37,5 @@ Note that the semicolons at the end are for use in a multiline-style client such
 ### Included datasets
 
 These are broadly available datasets, but we may not have permission to _re_-distribute them, so keep this repo to yourself:
-- DataMining.IrisDataset: Iris (the flower, not the Gartner MQ ODBMS leader!), as in the classic SAMPLES namespace. You can predict the Species (categorization) or any of the width / length columns (regression)
-- Titanic.Passenger: List of all the passengers of the ill-fated bathtub, with a "Survived" column that makes a fun demo target.
-- \[SQLUser.\]LoanPerformance: as used at Global Summit, with a "LoanDefault" column that works well for a more serious demo. Derived from a [Kaggle dataset](https://www.kaggle.com/avikpaul4u/vehicle-loan-default-prediction)
 - \[SQLUser.\]Campaign: as used in the campaign showcase in the [ML Toolkit](https://github.com/intersystems/MLToolkit). The target column to put your crosshairs on is RESPONSE
 - \[SQLUser.\]BreastCancer
-- \[SQLUser.\]appointments
-- NLP.HateSpeech - anticipating some work on the NLP end, taking a text classification challenge from [https://github.com/aitor-garcia-p/hate-speech-dataset]
