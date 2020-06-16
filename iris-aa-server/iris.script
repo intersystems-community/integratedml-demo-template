@@ -6,17 +6,9 @@ zn "USER"
 
 do $system.OBJ.LoadDir("/data/src","cuk",,1)
 
-do $system.OBJ.Load("/data/loans.gof")
-do ##class(User.LoanPerformance).%BuildIndices()
-
-do ##class(DataMining.IrisDataset).load()
-
-do ##class(Titanic.Passenger).Import()
 
 w ##class(Util.Loader).Load("/data/breast-cancer.csv","User.BreastCancer")
-w ##class(Util.Loader).Load("/data/appointment-noshows.csv","User.appointments")
 
 w ##class(Util.Loader).Load("/data/Campaign.csv","User.Campaign",";")
 
-w ##class(NLP.HateSpeech).Load("/data/hate-speech/")
 halt
