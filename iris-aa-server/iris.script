@@ -3,7 +3,7 @@ w ##class(Security.Users).UnExpireUserPasswords("*")
 w $zu(1,"irislib",0,0,0,0,0,0,0,0,0,0,0,2),!
 
 zn "USER"
-
+zpm "install sslclient"
 zpm "install csvgen"
 zpm "install webterminal"
 
