@@ -1,9 +1,18 @@
 ## integratedml-demo-template
-IntegratedML samples to be used as a template.
-
 This is a template for IntegratedML - InterSystems Github repository
 
-The template also comes with a few example Jupyter notebooks (http://jupyter.org) which demonstrate how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a docker container.
+This repository comes with a few example Jupyter notebooks (http://jupyter.org) which demonstrate how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a docker container.
+
+## What is IntegratedML?
+IntegratedML is a feature of the InterSystems IRIS data platform that brings machine learning to SQL developers.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/intersystems-community/integratedml-demo-template/master/integratedml_overview.PNG" width="600" title="docker environment topology after installation">
+</p>
+
+IntegratedML is
+- all-SQL -- Build and train machine learning models using intuitive custom SQL commands, fully integrated within the InterSystems IRIS SQL processor
+- turnkey -- no packages or programming languages to learn, nothing to install
+- modular -- leverages "best of breed" open source and proprietary AutoML frameworks
 
 Learn more about InterSystems IRIS and IntegratedML at the [InterSystems Learning site](https://learning.intersystems.com/course/view.php?name=Learn%20IntegratedML)
 
