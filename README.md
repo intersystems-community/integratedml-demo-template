@@ -1,7 +1,24 @@
-## integratedml-demo-template
-This is a template for IntegratedML - InterSystems Github repository
+# integratedml-demo-template
+This is a template for IntegratedML - InterSystems Github repository.
 
 This repository comes with a few example Jupyter notebooks (http://jupyter.org) which demonstrate how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a docker container.
+
+## Contents
+* [What is IntegratedML?](#what-is-integratedml)
+* [What's inside this template](#whats-inside-this-template)
+* [Pre-configured environment, and sample data](#pre-configured-environment-and-sample-data)
+   * [Sample notebooks to get you started](#sample-notebooks-to-get-you-started)
+   * [Demo environment topology](#demo-environment-topology)
+   * [Prerequisites](#prerequisites)
+   * [Tested environments](#tested-environments)
+   * [Installation](#installation)
+* [How to develop your IntegragedML solution with the IntegratedML Template Repo](#how-to-develop-your-integragedml-solution-with-the-integratedml-template-repository)
+   * [Use this template](#use-this-template)
+   * [Checkout the repo](#checkout-the-repo)
+   * [Start developing](#start-developing)
+* [How to Import data into InterSystems IRIS](#how-to-import-data-into-intersystems-iris)
+   * [Importing data from CSV file](#importing-data-from-csv-file)
+   * [Importing data from CSV URL](#importing-data-from-csv-url)
 
 ## What is IntegratedML?
 IntegratedML is a feature of the InterSystems IRIS data platform that brings machine learning to SQL developers.
@@ -74,7 +91,7 @@ http://localhost:8092/terminal/
 Enter **/sql** mode and make SQL queries to examine data in IRIS.
 ![](https://user-images.githubusercontent.com/8899513/85151564-edb5c900-b221-11ea-96d4-1833a93c47eb.png?raw=true)
 
-# How to develop your IntegragedML solution with IntegratedML Template
+# How to develop your IntegragedML solution with the IntegratedML Template Repository
 ## Use this template
 Click the button "Use this template" on Github to create a new repository which will be the copy of this one.
 
@@ -87,7 +104,7 @@ Install [VSCode](https://code.visualstudio.com/), [Docker Desctop](https://marke
 Import your data as listed below, rebuild containers to let the data be imported, and use IntegratedML via SQL tools, as described in Jupyter notebooks.
 
 
-# How to Import data in IRIS 
+# How to Import data into InterSystems IRIS 
 ## Importing data from CSV file
 1. Add csv file into the repository, e.g. like [this titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/data/titanic.csv)
 2. Introduce an import data call into your IRIS initalisation script.
