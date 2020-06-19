@@ -5,18 +5,19 @@ This is a template for IntegratedML - InterSystems Github repository
 
 The template also comes with a few example Jupyter notebooks (http://jupyter.org) which demonstrate how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a docker container.
 
+Learn more about InterSystems IRIS and IntegratedML at the [InterSystems Learning site](https://learning.intersystems.com/course/view.php?name=Learn%20IntegratedML)
+
 ## What's inside this template
 
-### pre-configured environment, and sample data
+### Pre-configured environment, and sample data
 This template creates a docker environment (via "docker-compose up") of 2 pre-configured containers:
   1. tf2jupyter: Jupyter+Tensorflow2.2(without GPU), with a few sample notebook files (in its Dockerfile)
-  2. irisimlsvr another one for an IRIS 2020.3 Community Edition, with pre-loaded sample data in USER namespace(see its Dockerfile)
+  2. irisimlsvr another one for an IRIS 2020.3 Community Edition, with pre-loaded sample data in USER namespace(see its [Dockerfile](iris-aa-server/Dockerfile) and [iris.script](iris-aa-server/iris.script) that is run at startup)
 
-### sample notebook to start with
-3x sample notebook files in this template:
-  1. A simple JDBC connection from tf2jupyter into a sample data table (Iris flowers) within IRIS's USER.
-  2. The above plus a few pandas data frame operatons and read/wrtie samples data into IRIS's USER.
-  3. The above plus some very basic, initial SQL syntax demox of using IRIS IntegratedML.
+### Sample notebooks to get you started
+2 sample notebook files in this template:
+- [campaign-integratedml-jdbc.ipynb](jupyter-samples/campaign-integratedml-jdbc.ipynb): A simple JDBC connection from tf2jupyter into a sample data table (Marketing Campaign data) within InterSystems IRIS's USER namespace, showing some use of IntegratedML including VALIDATE MODEL command usage.
+- [biomedical-integratedml-PyODBC.ipynb](jupyter-samples/biomedical-integratedml-PyODBC.ipynb): Connection to InterSystems IRIS server over PyODBC, building and using an IntegratedML machine learning mode, with a complex SQL query using the PREDICT() and PROBABILITY() IntegratedML SQL functions.
 
 ## Demo environment topology
 <p align="center">
@@ -55,20 +56,3 @@ $ docker-compose up -d
 http://localhost:8896/tree
 ```
 Note: use `docker-compose ps` to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost)
-
-
-## Starts
-1. Test the provided notebooks.
-2. Starting from there, try whatever you could image with your own data within IRIS
-
-
-## What's next
-1. We can put in more demo notebooks on PyODBC, PySpark(no bespoke SQL syntax hence no IML SQL), IRISNative etcetc
-
-
-## Purpose
-Purpose of this template is to provide the simplest tools for data developers to connect into IRIS database via commonly used Python3 +  Jupyter notebooks. 
-
-From there the developer can either go for exploreing the current IntegratedML Syntax (in SQL), or run the data through some ML/DL pipelines on the backend Tensorflow 2.2 engines.  
-
-The above explains how to simply read from and write into IRIS via Python3. Please also refer to [Python Gateway template](https://openexchange.intersystems.com/package/PythonGateway-Template) on how to invoke external Python applications or service from within IRIS. 
