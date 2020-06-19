@@ -65,3 +65,11 @@ $ docker-compose up -d
 http://localhost:8896/tree
 ```
 Note: use `docker-compose ps` to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost)
+
+5. Examine the test data with webterminal
+Open terminal with: SuperUser / SYS credentials
+```
+http://localhost:8092/terminal/
+```
+Run /sql mode and make SQL queries to examine data in IRIS.
+
