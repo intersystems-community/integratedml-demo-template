@@ -65,3 +65,43 @@ $ docker-compose up -d
 http://localhost:8896/tree
 ```
 Note: use `docker-compose ps` to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost)
+
+5. Examine the test data with webterminal
+Open terminal with: SuperUser / SYS credentials
+```
+http://localhost:8092/terminal/
+```
+Enter **/sql** mode and make SQL queries to examine data in IRIS.
+![](https://github.com/evshvarov/integratedml-demo-template/blob/master/sql_demo.png?raw=true)
+
+# How to develop your IntegragedML solution with IntegratedML Template
+## Use this template
+Click the button "Use this template" on Github to create a new repository which will be the copy of this one.
+
+## Checkout the repo
+Clone your new repo to a local folder.  
+
+## Start developing
+Install [VSCode](https://code.visualstudio.com/), [Docker Desctop](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
+
+Import your data as listed below, rebuild containers to let the data be imported, and use IntegratedML via SQL tools, as described in Jupyter notebooks.
+
+
+# How to Import data in IRIS 
+## Importing data from CSV file
+1. Add csv file into the repository, e.g. like [this titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/data/titanic.csv)
+2. Introduce an import data call into your IRIS initalisation script.
+This is an [example line to import titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L16) into IRIS User.Passengers class along with data.
+3. Query the data from any SQL tool, web terminal or from InterSystems ObjectScript with:
+```
+SELECT * From Passengers
+```
+## Importing data from CSV URL
+If your file is accessible remotely, you can import it as follows:
+1. Add the import CSV from URL line into [iris.script](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/iris.script).
+Here is an example line to [import countries.csv data from URL](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L17)
+This will create User.Countries class and import data which you can query with SQL from Countries table:
+```
+SELECT * FROM COUNTRIES
+```
+

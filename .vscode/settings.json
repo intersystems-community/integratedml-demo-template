@@ -1,10 +1,18 @@
 {
-    "objectscript.conn" :{
+  "files.associations": {
+    
+    "iris.script": "objectscript",
+  },
+  "objectscript.conn" :{
       "ns": "USER",
       "active": true,
       "docker-compose": {
         "service": "irisimlsvr",
         "internalPort": 52773
-      }
-    }
+      },
+      "links": {
+        "IRIS IntegratedML Jupyter": "http://localhost:8896/tree",
+        "Webterminal": "http://localhost:8092/terminal/"
+        }
+  }
 }
