@@ -71,6 +71,6 @@ Open terminal with: SuperUser / SYS credentials
 ```
 http://localhost:8092/terminal/
 ```
-Run /sql mode and make SQL queries to examine data in IRIS.
+Enter **/sql** mode and make SQL queries to examine data in IRIS.
 ![](https://github.com/evshvarov/integratedml-demo-template/blob/master/sql_demo.png?raw=true)
 
