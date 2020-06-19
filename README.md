@@ -72,7 +72,7 @@ Open terminal with: SuperUser / SYS credentials
 http://localhost:8092/terminal/
 ```
 Enter **/sql** mode and make SQL queries to examine data in IRIS.
-![](https://github.com/evshvarov/integratedml-demo-template/blob/master/sql_demo.png?raw=true)
+![](https://user-images.githubusercontent.com/8899513/85151564-edb5c900-b221-11ea-96d4-1833a93c47eb.png?raw=true)
 
 # How to develop your IntegragedML solution with IntegratedML Template
 ## Use this template
