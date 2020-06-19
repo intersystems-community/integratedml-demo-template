@@ -1,6 +1,5 @@
 zn "%SYS"
 w ##class(Security.Users).UnExpireUserPasswords("*")
-w $zu(1,"irislib",0,0,0,0,0,0,0,0,0,0,0,2),!
 
 zn "USER"
 zpm "install sslclient"
@@ -13,7 +12,7 @@ w ##class(Util.Loader).Load("/data/breast-cancer.csv","User.BreastCancer")
 
 w ##class(Util.Loader).Load("/data/Campaign.csv","User.Campaign",";")
 
-do ##class(community.csvgen).Generate("/data/titanic.csv",",","Data.Passengers")
-do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","Data.Countries")
+do ##class(community.csvgen).Generate("/data/titanic.csv",",","User.Passengers")
+do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","User.Countries")
 
 halt
