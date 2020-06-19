@@ -30,7 +30,7 @@ This template creates a docker environment (via "docker-compose up") of 2 pre-co
 
 ## Demo environment topology
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intersystems-community/integratedml-demo-template/master/environment_topology_demo_template.PNG" width="600" title="docker environment topology after installation">
+  <img src="https://user-images.githubusercontent.com/8899513/85151307-a0d1f280-b221-11ea-81d8-f0e11ca45d4c.PNG" width="600" title="docker environment topology after installation">
 </p>
 
 ## Prerequisites
