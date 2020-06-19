@@ -74,6 +74,19 @@ http://localhost:8092/terminal/
 Enter **/sql** mode and make SQL queries to examine data in IRIS.
 ![](https://github.com/evshvarov/integratedml-demo-template/blob/master/sql_demo.png?raw=true)
 
+# How to develop your IntegragedML solution with IntegratedML Template
+## Use this template
+Click the button "Use this template" on Github to create a new repository which will be the copy of this one.
+
+## Checkout the repo
+Clone your new repo to a local folder.  
+
+## Start developing
+Install [VSCode](https://code.visualstudio.com/), [Docker Desctop](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
+
+Import your data as listed below, rebuild containers to let the data be imported, and use IntegratedML via SQL tools, as described in Jupyter notebooks.
+
+
 # How to Import data in IRIS 
 ## Importing data from CSV file
 1. Add csv file into the repository, e.g. like [this titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/data/titanic.csv)
@@ -91,8 +104,4 @@ This will create User.Countries class and import data which you can query with S
 ```
 SELECT * FROM COUNTRIES
 ```
-
-
-
-
 
