@@ -6,7 +6,7 @@ This repository comes with a few example Jupyter notebooks (http://jupyter.org) 
 ## What is IntegratedML?
 IntegratedML is a feature of the InterSystems IRIS data platform that brings machine learning to SQL developers.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intersystems-community/integratedml-demo-template/master/integratedml_overview.PNG" width="600" title="docker environment topology after installation">
+  <img src="https://user-images.githubusercontent.com/8899513/85149599-7848f900-b21f-11ea-9b65-b5d703752de3.PNG" width="600" title="docker environment topology after installation">
 </p>
 
 IntegratedML is
