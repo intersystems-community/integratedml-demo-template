@@ -74,3 +74,25 @@ http://localhost:8092/terminal/
 Enter **/sql** mode and make SQL queries to examine data in IRIS.
 ![](https://github.com/evshvarov/integratedml-demo-template/blob/master/sql_demo.png?raw=true)
 
+# How to Import data in IRIS 
+## Importing data from CSV file
+1. Add csv file into the repository, e.g. like [this titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/data/titanic.csv)
+2. Introduce an import data call into your IRIS initalisation script.
+This is an [example line to import titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L16) into IRIS User.Passengers class along with data.
+3. Query the data from any SQL tool, web terminal or from InterSystems ObjectScript with:
+```
+SELECT * From Passengers
+```
+## Importing data from CSV URL
+If your file is accessible remotely, you can import it as follows:
+1. Add the import CSV from URL line into [iris.script](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/iris.script).
+Here is an example line to [import countries.csv data from URL](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L17)
+This will create User.Countries class and import data which you can query with SQL from Countries table:
+```
+SELECT * FROM COUNTRIES
+```
+
+
+
+
+
