@@ -117,7 +117,7 @@ SELECT * From Passengers
 If your file is accessible remotely, you can import it as follows:
 1. Add the import CSV from URL line into [iris.script](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/iris.script).
 Here is an example line to [import countries.csv data from URL](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L17)
-This will create User.Countries class and import data which you can query with SQL from Countries table:
+2. Rebuild the docker image (the easiest way is to rebuild via _docker-compose_ -- ```docker-compose build```). This will create User.Countries class and import data which you can query with SQL from Countries table:
 ```
 SELECT * FROM COUNTRIES
 ```
