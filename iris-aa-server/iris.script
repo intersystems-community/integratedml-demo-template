@@ -15,4 +15,7 @@ w ##class(Util.Loader).Load("/data/Campaign.csv","User.Campaign",";")
 do ##class(community.csvgen).Generate("/data/titanic.csv",",","User.Passengers")
 do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","User.Countries")
 
+do ##class(community.csvgen).Generate("/data/readmission.csv",",","User.Readmission")
+
+
 halt
