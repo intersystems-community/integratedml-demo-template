@@ -41,9 +41,11 @@ This template creates a docker environment (via "docker-compose up") of 2 pre-co
   2. irisimlsvr another one for an IRIS 2020.3 Community Edition, with pre-loaded sample data in USER namespace(see its [Dockerfile](iris-aa-server/Dockerfile) and [iris.script](iris-aa-server/iris.script) that is run at startup)
 
 ### Sample notebooks to get you started
-2 sample notebook files -- by default this template starts Jupyter at http://localhost:8896/tree :
+3 sample notebook files -- by default this template starts Jupyter at http://localhost:8896/tree :
 - [campaign-integratedml-jdbc.ipynb](jupyter-samples/campaign-integratedml-jdbc.ipynb): A simple JDBC connection from tf2jupyter into a sample data table (Marketing Campaign data) within InterSystems IRIS's USER namespace, showing some use of IntegratedML including VALIDATE MODEL command usage.
+- [readmission-integratedml-jdbc.ipynb](jupyter-samples/readmission-integratedml-jdbc.ipynb): Demonstrates use of IntegratedML on a hospital readmission prediction dataset. 
 - [biomedical-integratedml-PyODBC.ipynb](jupyter-samples/biomedical-integratedml-PyODBC.ipynb): Connection to InterSystems IRIS server over PyODBC, building and using an IntegratedML machine learning mode, with a complex SQL query using the PREDICT() and PROBABILITY() IntegratedML SQL functions.
+
 
 ## Demo environment topology
 <p align="center">
