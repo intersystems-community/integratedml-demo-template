@@ -45,7 +45,7 @@ This template creates a docker environment (via "docker-compose up") of 2 pre-co
 - [campaign-integratedml-jdbc.ipynb](jupyter-samples/campaign-integratedml-jdbc.ipynb): A simple JDBC connection from tf2jupyter into a sample data table (Marketing Campaign data) within InterSystems IRIS's USER namespace, showing some use of IntegratedML including VALIDATE MODEL command usage.
 - [readmission-integratedml-jdbc.ipynb](jupyter-samples/readmission-integratedml-jdbc.ipynb): Demonstrates use of IntegratedML on a hospital readmission prediction dataset. 
 - [biomedical-integratedml-PyODBC.ipynb](jupyter-samples/biomedical-integratedml-PyODBC.ipynb): Connection to InterSystems IRIS server over PyODBC, building and using an IntegratedML machine learning model, with a complex SQL query using the PREDICT() and PROBABILITY() IntegratedML SQL functions.
-- [ED_visit_90_day.ipynb](jupyter-samples/ED_visit_90_day.ipynb): Building and using an IntegratedML machine learning model to predict visits to Emergency Department, utilizing data from a Health Insight server, kindly provided by Joseph Cofone at Baystate Health.
+- [ED_visit_90_day.ipynb](jupyter-samples/ED_visit_90_day.ipynb): Building and using an IntegratedML machine learning model to predict visits to Emergency Department, utilizing data from a Health Insight server, kindly provided by Joseph Cofone at Baystate Health. *NOTE: this notebook is not executable!*
 
 ## Demo environment topology
 <p align="center">
