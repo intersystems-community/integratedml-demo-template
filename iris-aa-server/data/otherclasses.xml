@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2019.1 (Build 510U)" ts="2019-11-11 15:04:13">
+<Class name="User.BreastCancer">
+<SqlTableName/>
+<Super>%Persistent,%XML.Adaptor</Super>
+<TimeChanged>65121,19976.506556</TimeChanged>
+<TimeCreated>65105,36348.210592</TimeCreated>
+
+<Property name="Diagnosis">
+<Type>%String</Type>
+<SqlColumnNumber>2</SqlColumnNumber>
+</Property>
+
+<Property name="MeanRadius">
+<Type>%Numeric</Type>
+<SqlColumnNumber>3</SqlColumnNumber>
+</Property>
+
+<Property name="MeanTexture">
+<Type>%Numeric</Type>
+<SqlColumnNumber>4</SqlColumnNumber>
+</Property>
+
+<Property name="MeanPerimeter">
+<Type>%Numeric</Type>
+<SqlColumnNumber>5</SqlColumnNumber>
+</Property>
+
+<Property name="MeanArea">
+<Type>%Numeric</Type>
+<SqlColumnNumber>6</SqlColumnNumber>
+</Property>
+
+<Property name="MeanSmoothness">
+<Type>%Numeric</Type>
+<SqlColumnNumber>7</SqlColumnNumber>
+</Property>
+
+<Property name="MeanCompactness">
+<Type>%Numeric</Type>
+<SqlColumnNumber>8</SqlColumnNumber>
+</Property>
+
+<Property name="MeanConcavity">
+<Type>%Numeric</Type>
+<SqlColumnNumber>9</SqlColumnNumber>
+</Property>
+
+<Property name="MeanConcavePoints">
+<Type>%Numeric</Type>
+<SqlColumnNumber>10</SqlColumnNumber>
+</Property>
+
+<Property name="MeanSymmetry">
+<Type>%Numeric</Type>
+<SqlColumnNumber>11</SqlColumnNumber>
+</Property>
+
+<Property name="MeanFractalDimension">
+<Type>%Numeric</Type>
+<SqlColumnNumber>12</SqlColumnNumber>
+</Property>
+
+<Property name="StandardRadius">
+<Type>%Numeric</Type>
+<SqlColumnNumber>13</SqlColumnNumber>
+</Property>
+
+<Property name="StandardTexture">
+<Type>%Numeric</Type>
+<SqlColumnNumber>14</SqlColumnNumber>
+</Property>
+
+<Property name="StandardPerimeter">
+<Type>%Numeric</Type>
+<SqlColumnNumber>15</SqlColumnNumber>
+</Property>
+
+<Property name="StandardArea">
+<Type>%Numeric</Type>
+<SqlColumnNumber>16</SqlColumnNumber>
+</Property>
+
+<Property name="StandardSmoothness">
+<Type>%Numeric</Type>
+<SqlColumnNumber>17</SqlColumnNumber>
+</Property>
+
+<Property name="StandardCompactness">
+<Type>%Numeric</Type>
+<SqlColumnNumber>18</SqlColumnNumber>
+</Property>
+
+<Property name="StandardConcavity">
+<Type>%Numeric</Type>
+<SqlColumnNumber>19</SqlColumnNumber>
+</Property>
+
+<Property name="StandardConcavePoints">
+<Type>%Numeric</Type>
+<SqlColumnNumber>20</SqlColumnNumber>
+</Property>
+
+<Property name="StandardSymmetry">
+<Type>%Numeric</Type>
+<SqlColumnNumber>21</SqlColumnNumber>
+</Property>
+
+<Property name="StandardFractalDimension">
+<Type>%Numeric</Type>
+<SqlColumnNumber>22</SqlColumnNumber>
+</Property>
+
+<Property name="WorstRadius">
+<Type>%Numeric</Type>
+<SqlColumnNumber>23</SqlColumnNumber>
+</Property>
+
+<Property name="WorstTexture">
+<Type>%Numeric</Type>
+<SqlColumnNumber>24</SqlColumnNumber>
+</Property>
+
+<Property name="WorstPerimeter">
+<Type>%Numeric</Type>
+<SqlColumnNumber>25</SqlColumnNumber>
+</Property>
+
+<Property name="WorstArea">
+<Type>%Numeric</Type>
+<SqlColumnNumber>26</SqlColumnNumber>
+</Property>
+
+<Property name="WorstSmoothness">
+<Type>%Numeric</Type>
+<SqlColumnNumber>27</SqlColumnNumber>
+</Property>
+
+<Property name="WorstCompactness">
+<Type>%Numeric</Type>
+<SqlColumnNumber>28</SqlColumnNumber>
+</Property>
+
+<Property name="WorstConcavity">
+<Type>%Numeric</Type>
+<SqlColumnNumber>29</SqlColumnNumber>
+</Property>
+
+<Property name="WorstConcavePoints">
+<Type>%Numeric</Type>
+<SqlColumnNumber>30</SqlColumnNumber>
+</Property>
+
+<Property name="WorstSymmetry">
+<Type>%Numeric</Type>
+<SqlColumnNumber>31</SqlColumnNumber>
+</Property>
+
+<Property name="WorstFractalDimension">
+<Type>%Numeric</Type>
+<SqlColumnNumber>32</SqlColumnNumber>
+</Property>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DataLocation>^User.BreastCancerD</DataLocation>
+<DefaultData>BreastCancerDefaultData</DefaultData>
+<IdLocation>^User.BreastCancerD</IdLocation>
+<IndexLocation>^User.BreastCancerI</IndexLocation>
+<StreamLocation>^User.BreastCancerS</StreamLocation>
+<Data name="BreastCancerDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Diagnosis</Value>
+</Value>
+<Value name="3">
+<Value>MeanRadius</Value>
+</Value>
+<Value name="4">
+<Value>MeanTexture</Value>
+</Value>
+<Value name="5">
+<Value>MeanPerimeter</Value>
+</Value>
+<Value name="6">
+<Value>MeanArea</Value>
+</Value>
+<Value name="7">
+<Value>MeanSmoothness</Value>
+</Value>
+<Value name="8">
+<Value>MeanCompactness</Value>
+</Value>
+<Value name="9">
+<Value>MeanConcavity</Value>
+</Value>
+<Value name="10">
+<Value>MeanConcavePoints</Value>
+</Value>
+<Value name="11">
+<Value>MeanSymmetry</Value>
+</Value>
+<Value name="12">
+<Value>MeanFractalDimension</Value>
+</Value>
+<Value name="13">
+<Value>StandardRadius</Value>
+</Value>
+<Value name="14">
+<Value>StandardTexture</Value>
+</Value>
+<Value name="15">
+<Value>StandardPerimeter</Value>
+</Value>
+<Value name="16">
+<Value>StandardArea</Value>
+</Value>
+<Value name="17">
+<Value>StandardSmoothness</Value>
+</Value>
+<Value name="18">
+<Value>StandardCompactness</Value>
+</Value>
+<Value name="19">
+<Value>StandardConcavity</Value>
+</Value>
+<Value name="20">
+<Value>StandardConcavePoints</Value>
+</Value>
+<Value name="21">
+<Value>StandardSymmetry</Value>
+</Value>
+<Value name="22">
+<Value>StandardFractalDimension</Value>
+</Value>
+<Value name="23">
+<Value>WorstRadius</Value>
+</Value>
+<Value name="24">
+<Value>WorstTexture</Value>
+</Value>
+<Value name="25">
+<Value>WorstPerimeter</Value>
+</Value>
+<Value name="26">
+<Value>WorstArea</Value>
+</Value>
+<Value name="27">
+<Value>WorstSmoothness</Value>
+</Value>
+<Value name="28">
+<Value>WorstCompactness</Value>
+</Value>
+<Value name="29">
+<Value>WorstConcavity</Value>
+</Value>
+<Value name="30">
+<Value>WorstConcavePoints</Value>
+</Value>
+<Value name="31">
+<Value>WorstSymmetry</Value>
+</Value>
+<Value name="32">
+<Value>WorstFractalDimension</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="User.MovieData">
+<Super>%Persistent,%XML.Adaptor</Super>
+<TimeChanged>65125,73222.494675</TimeChanged>
+<TimeCreated>65125,73221.9489</TimeCreated>
+
+<Property name="review">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="32000"/>
+</Property>
+
+<Property name="sentiment">
+<Type>%Boolean</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DataLocation>^User.MovieDataD</DataLocation>
+<DefaultData>MovieDataDefaultData</DefaultData>
+<IdLocation>^User.MovieDataD</IdLocation>
+<IndexLocation>^User.MovieDataI</IndexLocation>
+<StreamLocation>^User.MovieDataS</StreamLocation>
+<Data name="MovieDataDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>review</Value>
+</Value>
+<Value name="3">
+<Value>sentiment</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="User.appointments">
+<Description>
+</Description>
+<Final>1</Final>
+<ClassType>persistent</ClassType>
+<DdlAllowed>1</DdlAllowed>
+<Owner>_SYSTEM</Owner>
+<ProcedureBlock>1</ProcedureBlock>
+<SqlRowIdPrivate>1</SqlRowIdPrivate>
+<SqlTableName>appointments</SqlTableName>
+<Super>%Persistent</Super>
+<TimeChanged>65260,55515.971582</TimeChanged>
+<TimeCreated>65260,55515.923564</TimeCreated>
+
+<Property name="ID">
+<Type>%Library.BigInt</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>2</SqlColumnNumber>
+</Property>
+
+<Property name="Gender">
+<Type>%Library.String</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>3</SqlColumnNumber>
+<Parameter name="CONTENT" value="STRING"/>
+<Parameter name="ESCAPE" value="XML"/>
+<Parameter name="JSONTYPE" value="string"/>
+<Parameter name="MAXLEN" value="1"/>
+<Parameter name="TRUNCATE" value="0"/>
+<Parameter name="XSDTYPE" value="string"/>
+</Property>
+
+<Property name="ScheduledDay">
+<Type>%Library.Date</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>4</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="string"/>
+<Parameter name="XSDTYPE" value="date"/>
+</Property>
+
+<Property name="AppointmentDay">
+<Type>%Library.Date</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>5</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="string"/>
+<Parameter name="XSDTYPE" value="date"/>
+</Property>
+
+<Property name="Age">
+<Type>%Library.Float</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>6</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="number"/>
+<Parameter name="XSDTYPE" value="double"/>
+</Property>
+
+<Property name="Neighborhood">
+<Type>%Library.String</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>7</SqlColumnNumber>
+<Parameter name="CONTENT" value="STRING"/>
+<Parameter name="ESCAPE" value="XML"/>
+<Parameter name="JSONTYPE" value="string"/>
+<Parameter name="MAXLEN" value="50"/>
+<Parameter name="TRUNCATE" value="0"/>
+<Parameter name="XSDTYPE" value="string"/>
+</Property>
+
+<Property name="Scholarship">
+<Type>%Library.Boolean</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>8</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="boolean"/>
+<Parameter name="STRICT" value="0"/>
+<Parameter name="XSDTYPE" value="boolean"/>
+</Property>
+
+<Property name="Hypertension">
+<Type>%Library.Boolean</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>9</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="boolean"/>
+<Parameter name="STRICT" value="0"/>
+<Parameter name="XSDTYPE" value="boolean"/>
+</Property>
+
+<Property name="Diabetes">
+<Type>%Library.Boolean</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>10</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="boolean"/>
+<Parameter name="STRICT" value="0"/>
+<Parameter name="XSDTYPE" value="boolean"/>
+</Property>
+
+<Property name="Alcoholism">
+<Type>%Library.Boolean</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>11</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="boolean"/>
+<Parameter name="STRICT" value="0"/>
+<Parameter name="XSDTYPE" value="boolean"/>
+</Property>
+
+<Property name="Handicap">
+<Type>%Library.Integer</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>12</SqlColumnNumber>
+<Parameter name="JSONTYPE" value="number"/>
+<Parameter name="MAXVAL" value="2147483647"/>
+<Parameter name="MINVAL" value="-2147483648"/>
+<Parameter name="STRICT" value="0"/>
+<Parameter name="XSDTYPE" value="long"/>
+</Property>
+
+<Property name="smsReceived">
+<Type>%Library.Boolean</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>13</SqlColumnNumber>
+</Property>
+
+<Property name="noShow">
+<Type>%Library.Boolean</Type>
+<Collection/>
+<Required>0</Required>
+<SqlColumnNumber>14</SqlColumnNumber>
+</Property>
+
+<Parameter name="USEEXTENTSET">
+<Default>1</Default>
+</Parameter>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DataLocation>^poCN.Bwdu.1</DataLocation>
+<DefaultData>appointmentsDefaultData</DefaultData>
+<IdLocation>^poCN.Bwdu.1</IdLocation>
+<IndexLocation>^poCN.Bwdu.I</IndexLocation>
+<StreamLocation>^poCN.Bwdu.S</StreamLocation>
+<IdFunction>sequence</IdFunction>
+<ExtentLocation>^poCN.Bwdu</ExtentLocation>
+<Data name="appointmentsDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>ID</Value>
+</Value>
+<Value name="2">
+<Value>Gender</Value>
+</Value>
+<Value name="3">
+<Value>ScheduledDay</Value>
+</Value>
+<Value name="4">
+<Value>AppointmentDay</Value>
+</Value>
+<Value name="5">
+<Value>Age</Value>
+</Value>
+<Value name="6">
+<Value>Neighborhood</Value>
+</Value>
+<Value name="7">
+<Value>Scholarship</Value>
+</Value>
+<Value name="8">
+<Value>Hypertension</Value>
+</Value>
+<Value name="9">
+<Value>Diabetes</Value>
+</Value>
+<Value name="10">
+<Value>Alcoholism</Value>
+</Value>
+<Value name="11">
+<Value>Handicap</Value>
+</Value>
+<Value name="12">
+<Value>smsReceived</Value>
+</Value>
+<Value name="13">
+<Value>noShow</Value>
+</Value>
+</Data>
+<Index name="IDKEY">
+<Location>^poCN.Bwdu.1</Location>
+</Index>
+</Storage>
+</Class>
+</Export>

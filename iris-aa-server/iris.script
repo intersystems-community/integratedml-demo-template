@@ -17,5 +17,16 @@ do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/
 
 do ##class(community.csvgen).Generate("/data/readmission.csv",",","User.Readmission")
 
+do $system.OBJ.Load("/data/LoanPerformance.xml","cf")
+do $system.OBJ.Load("/data/loans.gof")
+do ##class(User.LoanPerformance).%BuildIndices()
+
+do $system.OBJ.Load("/data/IrisDataset.xml","cf")
+do ##class(DataMining.IrisDataset).load()
+
+do $system.OBJ.Load("/data/Loader.xml","cf")
+do $system.OBJ.Load("/data/otherclasses.xml","cf")
+
+w ##class(Util.Loader).Load("/data/appointment-noshows.csv","User.appointments")
 
 halt

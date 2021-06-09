@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2019.4.0ML (Build 140U)" ts="2019-11-12 09:21:03">
+<Class name="User.LoanPerformance">
+<Super>%Persistent</Super>
+<TimeChanged>65329,33578.231722</TimeChanged>
+<TimeCreated>65268,55574.517277</TimeCreated>
+
+<Property name="DisbursedAmount">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="AssetCost">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="LTV">
+<Type>%Double</Type>
+</Property>
+
+<Property name="BranchId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SupplierId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="ManufacturerId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="CurrentPincodeId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="DateOfBirth">
+<Type>%Date</Type>
+</Property>
+
+<Property name="EmploymentType">
+<Type>%String</Type>
+</Property>
+
+<Property name="DisbursalDate">
+<Type>%Date</Type>
+</Property>
+
+<Property name="StateId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="EmployeeCodeId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="MobileNumberAvailable">
+<Type>%Boolean</Type>
+</Property>
+
+<Property name="Aadhar">
+<Type>%Boolean</Type>
+</Property>
+
+<Property name="PAN">
+<Type>%Boolean</Type>
+</Property>
+
+<Property name="Voter">
+<Type>%Boolean</Type>
+</Property>
+
+<Property name="Driving">
+<Type>%Boolean</Type>
+</Property>
+
+<Property name="Passport">
+<Type>%Boolean</Type>
+</Property>
+
+<Property name="CNSScore">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="CNSScoreDescription">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="256"/>
+</Property>
+
+<Property name="PrimaryAccounts">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="PrimaryAccountsActive">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="PrimaryAccountsOverdue">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="PrimaryCurrentBalance">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="PrimarySanctionedAmount">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="PrimaryDisbursedAmount">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SecondaryAccounts">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SecondaryAccountsActive">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SecondaryAccountsOverdue">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SecondaryCurrentBalance">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SecondarySanctionedAmount">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SecondaryDisbursedAmount">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="PrimaryInstallmentAmount">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SecondaryInstallmentAmount">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="NewAccountsLastSixMonths">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="DelinquentAccountsLastSixMonths">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="AverageAccountAgeMonths">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="CreditHistoryLengthMonths">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Inquiries">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="LoanDefault">
+<Type>%Boolean</Type>
+</Property>
+
+<Index name="LoanDefault">
+<Type>bitmap</Type>
+<Properties>LoanDefault</Properties>
+</Index>
+
+<Index name="AssetCost">
+<Properties>AssetCost</Properties>
+</Index>
+
+<Method name="Load">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>csv:%String</FormalSpec>
+<Implementation><![CDATA[
+	Do ..%KillExtent()
+	Set in=##class(%Stream.FileCharacter).%New()
+	Set sc=in.LinkToFile(csv)
+	Set count = 0
+	While 'in.AtEnd {
+		Set line=in.ReadLine()
+		If '+line CONTINUE //skip header
+		Do ..LoadOne(line)
+		Set count = count + 1
+	}
+	Write count _ " records loaded",!
+]]></Implementation>
+</Method>
+
+<Method name="LoadOne">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>line:%String</FormalSpec>
+<Implementation><![CDATA[
+	Set o = ..%New()
+	Set col = 1
+	Set o.DisbursedAmount = $p(line,",",$i(col))
+	Set o.AssetCost = $p(line,",",$i(col))
+	Set o.LTV = $p(line,",",$i(col))
+	Set o.BranchId = $p(line,",",$i(col))
+	Set o.SupplierId = $p(line,",",$i(col))
+	Set o.ManufacturerId = $p(line,",",$i(col))
+	Set o.CurrentPincodeId = $p(line,",",$i(col))
+	Set o.DateOfBirth = ..ToDate($p(line,",",$i(col)))
+	Set o.EmploymentType = $p(line,",",$i(col))
+	Set o.DisbursalDate = ..ToDate($p(line,",",$i(col)))
+	Set o.StateId = $p(line,",",$i(col))
+	Set o.EmployeeCodeId = $p(line,",",$i(col))
+	Set o.MobileNumberAvailable = $p(line,",",$i(col))
+	Set o.Aadhar = $p(line,",",$i(col))
+	Set o.PAN = $p(line,",",$i(col))
+	Set o.Voter = $p(line,",",$i(col))
+	Set o.Driving = $p(line,",",$i(col))
+	Set o.Passport = $p(line,",",$i(col))
+	Set o.CNSScore = $p(line,",",$i(col))
+	Set o.CNSScoreDescription = $p(line,",",$i(col))
+	Set o.PrimaryAccounts = $p(line,",",$i(col))
+	Set o.PrimaryAccountsActive = $p(line,",",$i(col))
+	Set o.PrimaryAccountsOverdue = $p(line,",",$i(col))
+	Set o.PrimaryCurrentBalance = $p(line,",",$i(col))
+	Set o.PrimarySanctionedAmount = $p(line,",",$i(col))
+	Set o.PrimaryDisbursedAmount = $p(line,",",$i(col))
+	Set o.SecondaryAccounts = $p(line,",",$i(col))
+	Set o.SecondaryAccountsActive = $p(line,",",$i(col))
+	Set o.SecondaryAccountsOverdue = $p(line,",",$i(col))
+	Set o.SecondaryCurrentBalance = $p(line,",",$i(col))
+	Set o.SecondarySanctionedAmount = $p(line,",",$i(col))
+	Set o.SecondaryDisbursedAmount = $p(line,",",$i(col))
+	Set o.PrimaryInstallmentAmount = $p(line,",",$i(col))
+	Set o.SecondaryInstallmentAmount = $p(line,",",$i(col))
+	Set o.NewAccountsLastSixMonths = $p(line,",",$i(col))
+	Set o.DelinquentAccountsLastSixMonths = $p(line,",",$i(col))
+	Set o.AverageAccountAgeMonths = ..ToMonths($p(line,",",$i(col)))
+	Set o.CreditHistoryLengthMonths = ..ToMonths($p(line,",",$i(col)))
+	Set o.Inquiries = $p(line,",",$i(col))
+	Set o.LoanDefault = $p(line,",",$i(col))
+	Set sc = o.%Save()
+	If 'sc throw ##class(%Exception.StatusException).CreateFromStatus(sc)
+]]></Implementation>
+</Method>
+
+<Method name="ToMonths">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>str</FormalSpec>
+<ReturnType>%Integer</ReturnType>
+<Implementation><![CDATA[
+	Set months = 0
+	Set months = months + (+str * 12)
+	Set months = months + (+$p(str," ",2))
+	Return months
+]]></Implementation>
+</Method>
+
+<Method name="ToDate">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>str</FormalSpec>
+<ReturnType>%Date</ReturnType>
+<Implementation><![CDATA[
+	Set day = $p(str,"-",1)
+	Set mon = $p(str,"-",2)
+	Set yr2 = $p(str,"-",3)
+	Set yr = $s(yr2 < 20:"20",1:"19")_yr2
+	Return ##class(%Date).DisplayToLogical(mon_"/"_day_"/"_yr)
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DataLocation>^User.LoanPerformanceD</DataLocation>
+<DefaultData>LoanPerformanceDefaultData</DefaultData>
+<IdLocation>^User.LoanPerformanceD</IdLocation>
+<IndexLocation>^User.LoanPerformanceI</IndexLocation>
+<StreamLocation>^User.LoanPerformanceS</StreamLocation>
+<IdFunction>sequence</IdFunction>
+<Data name="LoanPerformanceDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>DisbursedAmount</Value>
+</Value>
+<Value name="3">
+<Value>AssetCost</Value>
+</Value>
+<Value name="4">
+<Value>LTV</Value>
+</Value>
+<Value name="5">
+<Value>BranchId</Value>
+</Value>
+<Value name="6">
+<Value>SupplierId</Value>
+</Value>
+<Value name="7">
+<Value>ManufacturerId</Value>
+</Value>
+<Value name="8">
+<Value>CurrentPincodeId</Value>
+</Value>
+<Value name="9">
+<Value>DateOfBirth</Value>
+</Value>
+<Value name="10">
+<Value>EmploymentType</Value>
+</Value>
+<Value name="11">
+<Value>DisbursalDate</Value>
+</Value>
+<Value name="12">
+<Value>StateId</Value>
+</Value>
+<Value name="13">
+<Value>EmployeeCodeId</Value>
+</Value>
+<Value name="14">
+<Value>MobileNumberAvailable</Value>
+</Value>
+<Value name="15">
+<Value>Aadhar</Value>
+</Value>
+<Value name="16">
+<Value>PAN</Value>
+</Value>
+<Value name="17">
+<Value>Voter</Value>
+</Value>
+<Value name="18">
+<Value>Driving</Value>
+</Value>
+<Value name="19">
+<Value>Passport</Value>
+</Value>
+<Value name="20">
+<Value>CNSScore</Value>
+</Value>
+<Value name="21">
+<Value>PrimaryAccounts</Value>
+</Value>
+<Value name="22">
+<Value>PrimaryAccountsActive</Value>
+</Value>
+<Value name="23">
+<Value>PrimaryAccountsOverdue</Value>
+</Value>
+<Value name="24">
+<Value>PrimaryCurrentBalance</Value>
+</Value>
+<Value name="25">
+<Value>PrimarySanctionedAmount</Value>
+</Value>
+<Value name="26">
+<Value>PrimaryDisbursedAmount</Value>
+</Value>
+<Value name="27">
+<Value>SecondaryAccounts</Value>
+</Value>
+<Value name="28">
+<Value>SecondaryAccoutsActive</Value>
+</Value>
+<Value name="29">
+<Value>SecondaryAccountsOverdue</Value>
+</Value>
+<Value name="30">
+<Value>SecondaryCurrentBalance</Value>
+</Value>
+<Value name="31">
+<Value>SecondarySanctionedAmount</Value>
+</Value>
+<Value name="32">
+<Value>SecondaryDisbursedAmount</Value>
+</Value>
+<Value name="33">
+<Value>PrimaryInstallmentAmount</Value>
+</Value>
+<Value name="34">
+<Value>SecondaryInstallmentAmount</Value>
+</Value>
+<Value name="35">
+<Value>NewAccountsLastSixMonths</Value>
+</Value>
+<Value name="36">
+<Value>DelinquentAccountsLastSixMonths</Value>
+</Value>
+<Value name="37">
+<Value>AverageAccountAgeMonths</Value>
+</Value>
+<Value name="38">
+<Value>CreditHistoryLengthMonths</Value>
+</Value>
+<Value name="39">
+<Value>Inquiries</Value>
+</Value>
+<Value name="40">
+<Value>LoanDefault</Value>
+</Value>
+<Value name="41">
+<Value>CNSScoreDescription</Value>
+</Value>
+<Value name="42">
+<Value>SecondaryAccountsActive</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>
