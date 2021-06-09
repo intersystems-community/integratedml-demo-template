@@ -14,7 +14,8 @@ do ##class(community.csvgen).Generate("/data/titanic.csv",",","Titanic.Passenger
 do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","SQLUser.Countries")
 do ##class(community.csvgen).Generate("/data/readmission.csv",",","SQLUser.Readmission")
 
-// Build indices for the LoanPerformance table
+// Load globals and build indices for the LoanPerformance table
+do $system.OBJ.Load("/data/loans.gof")
 do ##class(User.LoanPerformance).%BuildIndices()
 
 // do $system.OBJ.Load("/data/Loader.xml","cf")
