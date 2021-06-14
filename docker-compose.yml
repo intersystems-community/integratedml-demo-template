@@ -20,7 +20,7 @@ services:
     hostname: tf2jupyter
     restart: on-failure
     ports:
-    - 8096:8888 # 8888 is the docker jupyter service port
+    - 8896:8888 # 8888 is the docker jupyter service port
     - 6026:6006 # 6006 is the tensorboard port
     volumes:
     - ./jupyter-samples:/tf   #shared volumes
