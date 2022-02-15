@@ -6,16 +6,19 @@ zpm "install sslclient"
 zpm "install csvgen"
 zpm "install webterminal"
 
-do $system.OBJ.LoadDir("/data/src","cuk",,1)
+// Load all the class definitions from the data directory
+do $system.OBJ.LoadDir("/data","cuk",,1)
 
-w ##class(Util.Loader).Load("/data/breast-cancer.csv","User.BreastCancer")
+// Show how csvgen can load data from csv files locally or remotely
+do ##class(community.csvgen).Generate("/data/titanic.csv",",","Titanic.Passenger_csvgen")
+do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","SQLUser.Countries")
+do ##class(community.csvgen).Generate("/data/readmission.csv",",","SQLUser.Readmission")
 
-w ##class(Util.Loader).Load("/data/Campaign.csv","User.Campaign",";")
+// Load globals and build indices for the LoanPerformance table
+do $system.OBJ.Load("/data/loans.gof")
+do ##class(User.LoanPerformance).%BuildIndices()
 
-do ##class(community.csvgen).Generate("/data/titanic.csv",",","User.Passengers")
-do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","User.Countries")
-
-do ##class(community.csvgen).Generate("/data/readmission.csv",",","User.Readmission")
+// do $system.OBJ.Load("/data/Loader.xml","cf")
 
 
 halt

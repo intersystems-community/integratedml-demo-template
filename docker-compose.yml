@@ -9,7 +9,7 @@ services:
     hostname: irisimlsvr
     restart: on-failure
     ports:
-    - 8091:51773 # 51773 is the superserver default port
+    - 8091:1972 # 51773 is the superserver default port
     - 8092:52773 # 52773 is the webserver/management portal port
     volumes:
     - ./iris-shared:/shared

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2019.4.0ML (Build 139U)" ts="2019-11-13 19:34:16">
+<Class name="Util.Loader">
+<TimeChanged>65330,70445.358752</TimeChanged>
+<TimeCreated>65330,67823.562348</TimeCreated>
+
+<Method name="Load">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>pFile:%String,pClass:%String,pSeparator:%String=","</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set tSC = $$$OK
+	try {
+		do $classmethod(pClass,"%KillExtent")
+		set tClassDef = ##class(%Dictionary.ClassDefinition).%OpenId(pClass)
+		for i=1:1:tClassDef.Properties.Count() {
+			set tProp = tClassDef.Properties.GetAt(i)
+			set tProps($$$UPPER(tProp.Name)) = tProp.Name
+			set tPropTypes($$$UPPER(tProp.Name)) = tProp.Type
+		}
+		
+		set tFile = ##class(%Stream.FileCharacter).%New()
+		do tFile.LinkToFile(pFile)
+		set tHeader = $zstrip(tFile.ReadLine(),"<>WC")
+		for i = 1:1:$l(tHeader,pSeparator) {
+			set h = $p(tHeader,pSeparator,i)
+			quit:h=""
+			set tColumns($i(tColumns))=tProps($$$UPPER($tr(h,"_"))),
+				tTypes(tColumns) = tPropTypes($$$UPPER($tr(h,"_")))
+		}
+		
+		while 'tFile.AtEnd {
+			set tLine = $zstrip(tFile.ReadLine(),"<>WC")
+			continue:tLine=""
+			
+			set tObj = $classmethod(pClass,"%New")
+			for i=1:1:tColumns {
+				set tValue = $piece(tLine,pSeparator,i)
+				set:tTypes(i)="%Library.Date" tValue = $zdateh($tr(tValue,"/","-"),3)
+				set $property(tObj, tColumns(i)) = tValue
+			}
+			set tSC = tObj.%Save()
+			quit:$$$ISERR(tSC)
+			set c = $i(c)
+		}
+		quit:$$$ISERR(tSC)
+		
+		write !,"Read ",c," records for table ",pClass
+		
+	} catch (ex) {
+		set tSC = ex.AsStatus()
+	}
+	quit tSC
+]]></Implementation>
+</Method>
+</Class>
+</Export>
