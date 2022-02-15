@@ -1,10 +1,6 @@
 ARG IMAGE=store/intersystems/iris-aa-community:2020.3.0AA.331.0
 ARG IMAGE=intersystemsdc/iris-aa-community:2020.3.0AA.331.0-zpm
-<<<<<<< HEAD
-ARG IMAGE=store/intersystems/iris-ml-community:2020.4.0AA.368.0
-=======
-ARG IMAGE=intersystemsdc/iris-ml-community:2020.3.0.302.0-zpm
->>>>>>> 730f3d3b116a644bb0466c140bb03f80ba73e6c9
+ARG IMAGE=intersystemsdc/iris-ml-community:2022.1.0.651.0-zpm
 FROM $IMAGE
 LABEL maintainer="Thomas Dyar <Thomas.Dyar@intersystems.com>"
 
