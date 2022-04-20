@@ -1,24 +1,26 @@
-zn "%SYS"
-w ##class(Security.Users).UnExpireUserPasswords("*")
+ zn "%SYS"
+ w ##class(Security.Users).UnExpireUserPasswords("*")
 
-zn "USER"
-zpm "install sslclient"
-zpm "install csvgen"
-zpm "install webterminal"
+ zn "USER"
+ zpm "install sslclient"
+ zpm "install csvgen"
+ zpm "install webterminal"
 
-// Load all the class definitions from the data directory
-do $system.OBJ.LoadDir("/data","cuk",,1)
+ // Load all the class definitions from the data directory
+ do $system.OBJ.LoadDir("/data","cuk",,1)
 
-// Show how csvgen can load data from csv files locally or remotely
-do ##class(community.csvgen).Generate("/data/titanic.csv",",","Titanic.Passenger_csvgen")
-do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","SQLUser.Countries")
-do ##class(community.csvgen).Generate("/data/readmission.csv",",","SQLUser.Readmission")
+ // Show how csvgen can load data from csv files locally or remotely
+ do ##class(community.csvgen).Generate("/data/titanic.csv",",","Titanic.Passenger")
+ do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","SQLUser.Countries")
+ do ##class(community.csvgen).Generate("/data/readmission.csv",",","Patient.Readmission")
+ do ##class(community.csvgen).Generate("/data/campaign.csv",";","Marketing.Campaign")
+ do ##class(community.csvgen).Generate("/data/breast-cancer.csv",",","Biomedical.BreastCancer")
 
-// Load globals and build indices for the LoanPerformance table
-do $system.OBJ.Load("/data/loans.gof")
-do ##class(User.LoanPerformance).%BuildIndices()
+ // Load globals and build indices for the LoanPerformance table
+ do $system.OBJ.Load("/data/loans.gof")
+ do ##class(User.LoanPerformance).%BuildIndices()
 
-// do $system.OBJ.Load("/data/Loader.xml","cf")
+ // do $system.OBJ.Load("/data/Loader.xml","cf")
 
 
-halt
+ halt
