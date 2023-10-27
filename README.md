@@ -91,7 +91,7 @@ Open terminal with: SuperUser / SYS credentials
 http://localhost:8092/terminal/
 ```
 Enter **/sql** mode and make SQL queries to examine data in IRIS.
-![](https://user-images.githubusercontent.com/8899513/85151564-edb5c900-b221-11ea-96d4-1833a93c47eb.png?raw=true)
+<img width="1229" alt="Screenshot 2023-10-28 at 12 08 44 AM" src="https://github.com/intersystems-community/integratedml-demo-template/assets/2781759/9e7fac7d-3198-4f38-9621-cf4558cf65ff">
 
 # How to develop your IntegragedML solution with the IntegratedML Template Repository
 ## Use this template
@@ -110,14 +110,14 @@ Import your data as listed below, rebuild containers to let the data be imported
 ## Importing data from CSV file
 1. Add csv file into the repository, e.g. like [this titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/data/titanic.csv)
 2. Introduce an import data call into your IRIS initalisation script.
-This is an [example line to import titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L16) into IRIS User.Passengers class along with data.
+This is an [example line to import titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/0db187b7fd127ff5432b68617bca7cfdadaaed2b/iris-aa-server/iris.script#L13) into IRIS Titanic.Passenger class along with data.
 3. Query the data from any SQL tool, web terminal or from InterSystems ObjectScript with:
 ```
-SELECT * From Passengers
+SELECT * From Titanic.Passenger
 ```
 ## Importing data from CSV URL
 If your file is accessible remotely, you can import it as follows:
-1. Add the import CSV from URL line into [iris.script](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/iris.script).
+1. Add the import CSV from URL line into [iris.script]().
 Here is an example line to [import countries.csv data from URL](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L17)
 2. Rebuild the docker image (the easiest way is to rebuild via _docker-compose_ -- ```docker-compose build```). This will create User.Countries class and import data which you can query with SQL from Countries table:
 ```
