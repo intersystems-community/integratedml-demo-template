@@ -13,7 +13,7 @@
  do ##class(community.csvgen).Generate("/data/titanic.csv",",","Titanic.Passenger")
  do ##class(community.csvgen).GenerateFromURL("https://raw.githubusercontent.com/datasciencedojo/datasets/master/WorldDBTables/CountryTable.csv",",","SQLUser.Countries")
  do ##class(community.csvgen).Generate("/data/readmission.csv",",","Patient.Readmission")
- do ##class(community.csvgen).Generate("/data/Campaign.csv",";","Marketing.Campaign")
+ do ##class(community.csvgen).Generate("/data/campaign.csv",";","Marketing.Campaign")
  do ##class(community.csvgen).Generate("/data/breast-cancer.csv",",","Biomedical.BreastCancer")
 
  // Load globals and build indices for the LoanPerformance table
