@@ -35,7 +35,7 @@ Learn more about InterSystems IRIS and IntegratedML at the [InterSystems Learnin
 ### Pre-configured environment and sample data
 This template creates a Docker environment (via `docker-compose up`) with 2 pre-configured containers:
 1. **jupyter**: TensorFlow 2.16.1 + Jupyter notebook server with sample notebooks
-2. **irisimlsvr**: InterSystems IRIS ML Community Edition with pre-loaded sample data in USER namespace
+2. **irisimlsvr**: InterSystems IRIS Community Edition with IntegratedML and pre-loaded sample data in USER namespace
 
 ### Sample notebooks to get you started
 The template includes sample notebook files accessible at http://localhost:8896/tree:

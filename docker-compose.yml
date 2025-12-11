@@ -6,7 +6,7 @@ services:
     image: iris-ml-server:latest
     hostname: irisimlsvr
     restart: on-failure
-    # CPU limits for IRIS Community Edition (max 8 cores)
+    # CPU limit (IRIS Community Edition supports up to 20 cores)
     cpus: 2
     ports:
       - "8091:1972"   # SuperServer port
