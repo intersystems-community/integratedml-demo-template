@@ -2,7 +2,7 @@
 
 This is a template for IntegratedML - InterSystems GitHub repository.
 
-This repository comes with example Jupyter notebooks demonstrating how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a Docker container.
+This repository comes with example Jupyter notebooks demonstrating how to use IntegratedML in InterSystems IRIS Community Edition in a Docker container.
 
 ## Contents
 - [What is IntegratedML?](#what-is-integratedml)
@@ -35,7 +35,7 @@ Learn more about InterSystems IRIS and IntegratedML at the [InterSystems Learnin
 ### Pre-configured environment and sample data
 This template creates a Docker environment (via `docker-compose up`) with 2 pre-configured containers:
 1. **jupyter**: TensorFlow 2.16.1 + Jupyter notebook server with sample notebooks
-2. **irisimlsvr**: InterSystems IRIS Community Edition with IntegratedML and pre-loaded sample data in USER namespace
+2. **irisimlsvr**: InterSystems IRIS Community Edition with AutoML package (installed via Dockerfile) and pre-loaded sample data in USER namespace
 
 ### Sample notebooks to get you started
 The template includes sample notebook files accessible at http://localhost:8896/tree:
