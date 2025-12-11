@@ -179,7 +179,7 @@ FROM containers.intersystems.com/intersystems/iris-community:latest-em
 - **Python** with intersystems-irispython DB-API driver
 - **AutoML** (intersystems-iris-automl)
 
-## Changes in 2024 Update
+## Changes in 2025 Update
 - Updated TensorFlow from 2.2.0 to 2.16.1
 - Switched from JDBC/PyODBC to DB-API driver (intersystems-irispython)
 - Switched to official InterSystems Container Registry (`containers.intersystems.com`)

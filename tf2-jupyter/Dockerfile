@@ -1,4 +1,4 @@
-# TensorFlow 2.16.1 with Jupyter - updated December 2024
+# TensorFlow 2.16.1 with Jupyter - updated December 2025
 FROM tensorflow/tensorflow:2.16.1-jupyter
 LABEL maintainer="Thomas Dyar <Thomas.Dyar@intersystems.com>"
 

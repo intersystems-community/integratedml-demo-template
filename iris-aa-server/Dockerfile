@@ -1,4 +1,4 @@
-# InterSystems IRIS Community Edition - updated December 2024
+# InterSystems IRIS Community Edition - updated December 2025
 # Using official InterSystems registry (valid license, multi-arch ARM64/AMD64)
 ARG IMAGE=containers.intersystems.com/intersystems/iris-community:latest-em
 FROM $IMAGE
