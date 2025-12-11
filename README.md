@@ -48,9 +48,49 @@ The template includes sample notebook files accessible at http://localhost:8896/
 All notebooks use the **intersystems-irispython** DB-API driver for database connectivity.
 
 ## Demo environment topology
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/8899513/85151307-a0d1f280-b221-11ea-81d8-f0e11ca45d4c.PNG" width="600" title="Docker environment topology">
-</p>
+
+```mermaid
+flowchart TB
+    subgraph Browser["🌐 Web Browser"]
+        JupyterUI["Jupyter Notebook"]
+        IRISPortal["IRIS Management Portal"]
+    end
+
+    subgraph Host["Host Machine (Ubuntu, Mac OS, Windows)"]
+        subgraph Docker["Docker Desktop / Docker Compose"]
+            subgraph jupyter["📓 jupyter container"]
+                JupyterServer["Jupyter Server :8888"]
+                TensorBoard["TensorBoard :6006"]
+                TF["TensorFlow 2.16.1"]
+                DBAPI["DB-API Driver"]
+            end
+
+            subgraph irisimlsvr["🗄️ irisimlsvr container"]
+                IRIS["IRIS Community Edition"]
+                AutoML["AutoML Package"]
+                SuperServer["SuperServer :1972"]
+                WebServer["Web Server :52773"]
+                UserDB["USER namespace\n(demo data)"]
+            end
+        end
+    end
+
+    JupyterUI -->|"http://localhost:8896"| JupyterServer
+    IRISPortal -->|"http://localhost:8092"| WebServer
+    Browser -->|":6026"| TensorBoard
+    DBAPI <-->|"TCP :8091 → :1972"| SuperServer
+
+    style jupyter fill:#e1f5fe
+    style irisimlsvr fill:#fff3e0
+```
+
+**Port Mappings:**
+| Host Port | Container Port | Service |
+|-----------|----------------|---------|
+| 8896 | 8888 | Jupyter Notebook |
+| 6026 | 6006 | TensorBoard |
+| 8091 | 1972 | IRIS SuperServer (DB-API) |
+| 8092 | 52773 | IRIS Web Portal |
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
