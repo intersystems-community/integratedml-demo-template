@@ -87,7 +87,7 @@ flowchart LR
 | 8092 | 52773 | IRIS Web Portal |
 
 ## Prerequisites
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker](https://www.docker.com/products/docker-desktop) or [Podman](https://podman.io/) installed.
 
 ## Tested environments
 This template is tested on AWS Ubuntu, Mac OS, and Windows 10. It should work on other Docker environments too - let us know if you encounter any issues.
@@ -134,7 +134,7 @@ Click the button "Use this template" on GitHub to create a new repository which 
 Clone your new repo to a local folder.
 
 ### Start developing
-Install [VSCode](https://code.visualstudio.com/), [Docker Desktop](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
+Install [VSCode](https://code.visualstudio.com/) with the [Docker extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript extension](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript), then open the folder in VSCode.
 
 Import your data as listed below, rebuild containers to let the data be imported, and use IntegratedML via SQL tools, as described in Jupyter notebooks.
 
