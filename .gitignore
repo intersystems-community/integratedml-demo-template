@@ -1,1 +1,23 @@
 .ipynb_checkpoints
+
+# AI assistant configuration
+.claude/
+.specify/
+.cursor/
+.aider/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp

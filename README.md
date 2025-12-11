@@ -1,126 +1,155 @@
-# integratedml-demo-template
-This is a template for IntegratedML - InterSystems Github repository.
+# IntegratedML Demo Template
 
-This repository comes with a few example Jupyter notebooks (http://jupyter.org) which demonstrate how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a docker container.
+This is a template for IntegratedML - InterSystems GitHub repository.
+
+This repository comes with example Jupyter notebooks demonstrating how to use IntegratedML in InterSystems IRIS Community Edition (Advanced Analytics including IntegratedML) in a Docker container.
 
 ## Contents
-* [What is IntegratedML?](#what-is-integratedml)
-* [What's inside this template](#whats-inside-this-template)
-* [Pre-configured environment, and sample data](#pre-configured-environment-and-sample-data)
-   * [Sample notebooks to get you started](#sample-notebooks-to-get-you-started)
-   * [Demo environment topology](#demo-environment-topology)
-   * [Prerequisites](#prerequisites)
-   * [Tested environments](#tested-environments)
-   * [Installation](#installation)
-* [How to develop your IntegragedML solution with the IntegratedML Template Repo](#how-to-develop-your-integragedml-solution-with-the-integratedml-template-repository)
-   * [Use this template](#use-this-template)
-   * [Checkout the repo](#checkout-the-repo)
-   * [Start developing](#start-developing)
-* [How to Import data into InterSystems IRIS](#how-to-import-data-into-intersystems-iris)
-   * [Importing data from CSV file](#importing-data-from-csv-file)
-   * [Importing data from CSV URL](#importing-data-from-csv-url)
+- [What is IntegratedML?](#what-is-integratedml)
+- [What's inside this template](#whats-inside-this-template)
+- [Pre-configured environment and sample data](#pre-configured-environment-and-sample-data)
+  - [Sample notebooks to get you started](#sample-notebooks-to-get-you-started)
+  - [Demo environment topology](#demo-environment-topology)
+  - [Prerequisites](#prerequisites)
+  - [Tested environments](#tested-environments)
+  - [Installation](#installation)
+- [How to develop your IntegratedML solution](#how-to-develop-your-integratedml-solution-with-the-integratedml-template-repository)
+- [How to Import data into InterSystems IRIS](#how-to-import-data-into-intersystems-iris)
 
 ## What is IntegratedML?
 IntegratedML is a feature of the InterSystems IRIS data platform that brings machine learning to SQL developers.
+
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/8899513/85149599-7848f900-b21f-11ea-9b65-b5d703752de3.PNG" width="600" title="docker environment topology after installation">
+  <img src="https://user-images.githubusercontent.com/8899513/85149599-7848f900-b21f-11ea-9b65-b5d703752de3.PNG" width="600" title="IntegratedML overview">
 </p>
 
-IntegratedML is
-- all-SQL -- Build and train machine learning models using intuitive custom SQL commands, fully integrated within the InterSystems IRIS SQL processor
-- turnkey -- no packages or programming languages to learn, nothing to install
-- modular -- leverages "best of breed" open source and proprietary AutoML frameworks
+IntegratedML is:
+- **All-SQL** -- Build and train machine learning models using intuitive custom SQL commands, fully integrated within the InterSystems IRIS SQL processor
+- **Turnkey** -- No packages or programming languages to learn, nothing to install
+- **Modular** -- Leverages "best of breed" open source and proprietary AutoML frameworks
 
 Learn more about InterSystems IRIS and IntegratedML at the [InterSystems Learning site](https://learning.intersystems.com/course/view.php?name=Learn%20IntegratedML)
 
 ## What's inside this template
 
-### Pre-configured environment, and sample data
-This template creates a docker environment (via "docker-compose up") of 2 pre-configured containers:
-  1. tf2jupyter: Jupyter+Tensorflow2.2(without GPU), with a few sample notebook files (in its Dockerfile)
-  2. irisimlsvr another one for an IRIS 2020.3 Community Edition, with pre-loaded sample data in USER namespace(see its [Dockerfile](iris-aa-server/Dockerfile) and [iris.script](iris-aa-server/iris.script) that is run at startup)
+### Pre-configured environment and sample data
+This template creates a Docker environment (via `docker-compose up`) with 2 pre-configured containers:
+1. **jupyter**: TensorFlow 2.16.1 + Jupyter notebook server with sample notebooks
+2. **irisimlsvr**: InterSystems IRIS ML Community Edition with pre-loaded sample data in USER namespace
 
 ### Sample notebooks to get you started
-4 sample notebook files -- by default this template starts Jupyter at http://localhost:8896/tree :
-- [campaign-integratedml-jdbc.ipynb](jupyter-samples/campaign-integratedml-jdbc.ipynb): A simple JDBC connection from tf2jupyter into a sample data table (Marketing Campaign data) within InterSystems IRIS's USER namespace, showing some use of IntegratedML including VALIDATE MODEL command usage.
-- [readmission-integratedml-jdbc.ipynb](jupyter-samples/readmission-integratedml-jdbc.ipynb): Demonstrates use of IntegratedML on a hospital readmission prediction dataset. 
-- [biomedical-integratedml-PyODBC.ipynb](jupyter-samples/biomedical-integratedml-PyODBC.ipynb): Connection to InterSystems IRIS server over PyODBC, building and using an IntegratedML machine learning model, with a complex SQL query using the PREDICT() and PROBABILITY() IntegratedML SQL functions.
-- [ED_visit_90_day.ipynb](jupyter-samples/ED_visit_90_day.ipynb): Building and using an IntegratedML machine learning model to predict visits to Emergency Department, utilizing data from a Health Insight server, kindly provided by Joseph Cofone at Baystate Health. *NOTE: this notebook is not executable!*
+The template includes sample notebook files accessible at http://localhost:8896/tree:
+
+- **[campaign-integratedml.ipynb](jupyter-samples/campaign-integratedml.ipynb)**: A simple connection to sample Marketing Campaign data, demonstrating IntegratedML including VALIDATE MODEL command usage.
+- **[readmission-integratedml.ipynb](jupyter-samples/readmission-integratedml.ipynb)**: Demonstrates IntegratedML on a hospital readmission prediction dataset.
+- **[biomedical-integratedml.ipynb](jupyter-samples/biomedical-integratedml.ipynb)**: Building and using an IntegratedML model with complex SQL queries using PREDICT() and PROBABILITY() functions.
+- **[ED_visit_90_day.ipynb](jupyter-samples/ED_visit_90_day.ipynb)**: Building and using an IntegratedML model to predict Emergency Department visits. *NOTE: This notebook requires external data and is not executable out of the box.*
+
+All notebooks use the **intersystems-irispython** DB-API driver for database connectivity.
 
 ## Demo environment topology
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/8899513/85151307-a0d1f280-b221-11ea-81d8-f0e11ca45d4c.PNG" width="600" title="docker environment topology after installation">
+  <img src="https://user-images.githubusercontent.com/8899513/85151307-a0d1f280-b221-11ea-81d8-f0e11ca45d4c.PNG" width="600" title="Docker environment topology">
 </p>
 
 ## Prerequisites
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
 
 ## Tested environments
-This template is tested breifly on AWS Ubuntu, Mac OS, and Windows 10(using Docker Toolbox only). It should work on other Docker environment too - let us know if you encounter any issues.
+This template is tested on AWS Ubuntu, Mac OS, and Windows 10. It should work on other Docker environments too - let us know if you encounter any issues.
 
 ## Installation
 
-Clone/git pull the repo into any local directory
-
-```
-$ git clone https://github.com/intersystems-community/integratedml-demo-template.git
-```
-
-Open a Docker terminal in this directory and run:
-
-```
-$ docker-compose build
+1. Clone the repository:
+```bash
+git clone https://github.com/intersystems-community/integratedml-demo-template.git
+cd integratedml-demo-template
 ```
 
-3. Run the IRIS container, and Jupyter notebook server images:
-
+2. Build the Docker images:
+```bash
+docker-compose build
 ```
-$ docker-compose up -d
+
+3. Run the containers:
+```bash
+docker-compose up -d
 ```
 
-4. Open browser to access the notebooks
-
+4. Access the Jupyter notebooks:
 ```
 http://localhost:8896/tree
 ```
-Note: use `docker-compose ps` to confirm tf2juyter's ports; make sure right localhost port is used if over SSL tunneling to remotehost)
 
-5. Examine the test data with webterminal
-Open terminal with: SuperUser / SYS credentials
+5. Access the IRIS Management Portal / Web Terminal:
 ```
 http://localhost:8092/terminal/
 ```
-Enter **/sql** mode and make SQL queries to examine data in IRIS.
-<img width="1229" alt="Screenshot 2023-10-28 at 12 08 44 AM" src="https://github.com/intersystems-community/integratedml-demo-template/assets/2781759/9e7fac7d-3198-4f38-9621-cf4558cf65ff">
+Credentials: SuperUser / SYS
 
-# How to develop your IntegragedML solution with the IntegratedML Template Repository
-## Use this template
-Click the button "Use this template" on Github to create a new repository which will be the copy of this one.
+Enter `/sql` mode to make SQL queries and examine data in IRIS.
 
-## Checkout the repo
-Clone your new repo to a local folder.  
+<img width="1229" alt="Web Terminal SQL Mode" src="https://github.com/intersystems-community/integratedml-demo-template/assets/2781759/9e7fac7d-3198-4f38-9621-cf4558cf65ff">
 
-## Start developing
-Install [VSCode](https://code.visualstudio.com/), [Docker Desctop](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
+## How to develop your IntegratedML solution with the IntegratedML Template Repository
+
+### Use this template
+Click the button "Use this template" on GitHub to create a new repository which will be a copy of this one.
+
+### Checkout the repo
+Clone your new repo to a local folder.
+
+### Start developing
+Install [VSCode](https://code.visualstudio.com/), [Docker Desktop](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
 
 Import your data as listed below, rebuild containers to let the data be imported, and use IntegratedML via SQL tools, as described in Jupyter notebooks.
 
+## How to Import data into InterSystems IRIS
 
-# How to Import data into InterSystems IRIS 
-## Importing data from CSV file
-1. Add csv file into the repository, e.g. like [this titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/master/iris-aa-server/data/titanic.csv)
-2. Introduce an import data call into your IRIS initalisation script.
-This is an [example line to import titanic.csv](https://github.com/intersystems-community/integratedml-demo-template/blob/0db187b7fd127ff5432b68617bca7cfdadaaed2b/iris-aa-server/iris.script#L13) into IRIS Titanic.Passenger class along with data.
-3. Query the data from any SQL tool, web terminal or from InterSystems ObjectScript with:
+### Importing data from CSV file
+1. Add a CSV file into the repository, e.g., like [titanic.csv](iris-aa-server/data/titanic.csv)
+2. Add an import data call to your IRIS initialization script ([example](iris-aa-server/iris.script))
+3. Query the data from any SQL tool, web terminal, or from InterSystems ObjectScript:
+```sql
+SELECT * FROM Titanic.Passenger
 ```
-SELECT * From Titanic.Passenger
-```
-## Importing data from CSV URL
+
+### Importing data from CSV URL
 If your file is accessible remotely, you can import it as follows:
-1. Add the import CSV from URL line into [iris.script]().
-Here is an example line to [import countries.csv data from URL](https://github.com/intersystems-community/integratedml-demo-template/blob/7feaffef0a47c7c46cc683d89bdbaedbce48071c/iris-aa-server/iris.script#L17)
-2. Rebuild the docker image (the easiest way is to rebuild via _docker-compose_ -- ```docker-compose build```). This will create User.Countries class and import data which you can query with SQL from Countries table:
-```
-SELECT * FROM COUNTRIES
+1. Add the import CSV from URL line to [iris.script](iris-aa-server/iris.script)
+2. Rebuild the Docker image: `docker-compose build`
+3. Query the imported data:
+```sql
+SELECT * FROM SQLUser.Countries
 ```
 
+## Troubleshooting
+
+### IRIS Community Edition Core Limit Error
+
+If you see the error:
+```
+Error: Invalid Community Edition license, may have exceeded core limit.
+```
+
+This typically occurs with **outdated Docker images**. The official IRIS Community Edition from `containers.intersystems.com` supports up to **20 CPU cores**. The `intersystemsdc/iris-ml-community` images on Docker Hub have **expired licenses** and should not be used.
+
+**Solution:** This template uses the official InterSystems Container Registry image which has a valid license. If you encounter this error, ensure your Dockerfile uses:
+```
+FROM containers.intersystems.com/intersystems/iris-community:latest-em
+```
+
+## Technology Stack
+- **InterSystems IRIS Community Edition** from official registry (supports up to 20 cores)
+- **TensorFlow 2.16.1** with Jupyter
+- **Python** with intersystems-irispython DB-API driver
+- **AutoML** (intersystems-iris-automl)
+
+## Changes in 2024 Update
+- Updated TensorFlow from 2.2.0 to 2.16.1
+- Switched from JDBC/PyODBC to DB-API driver (intersystems-irispython)
+- Switched to official InterSystems Container Registry (`containers.intersystems.com`)
+- Modernized docker-compose configuration
+- Added GitHub Actions CI/CD workflow
+- Updated all Python dependencies with version pinning
+- Multi-architecture support (ARM64 for Apple Silicon, AMD64 for Intel)

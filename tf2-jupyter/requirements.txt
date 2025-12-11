@@ -1,0 +1,16 @@
+# InterSystems IRIS DB-API driver
+intersystems-irispython>=5.0.1
+
+# Data science essentials
+pandas>=2.0.0
+scikit-learn>=1.3.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# Jupyter enhancements
+jupyterthemes>=0.20.0
+ipywidgets>=8.0.0
+
+# Testing
+pytest>=7.0.0
+testcontainers-iris>=1.3.0

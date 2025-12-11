@@ -1,5 +1,0 @@
-jupyterthemes
-JayDeBeApi
-pandas
-scikit-learn
-

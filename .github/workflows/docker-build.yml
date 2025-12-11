@@ -1,0 +1,67 @@
+name: Docker Build and Test
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Jupyter container
+        uses: docker/build-push-action@v5
+        with:
+          context: ./tf2-jupyter
+          push: false
+          tags: tf2-jupyter:test
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build IRIS ML container
+        uses: docker/build-push-action@v5
+        with:
+          context: ./iris-aa-server
+          push: false
+          tags: iris-ml-server:test
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Verify docker-compose config
+        run: docker compose config
+
+  # Integration tests require IRIS to be running
+  # This job can be enabled when self-hosted runners with IRIS are available
+  # integration-test:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
+  #
+  #     - name: Start containers
+  #       run: docker compose up -d
+  #
+  #     - name: Wait for IRIS to be ready
+  #       run: |
+  #         echo "Waiting for IRIS to start..."
+  #         sleep 60
+  #         docker compose ps
+  #
+  #     - name: Run integration tests
+  #       run: |
+  #         docker compose exec -T jupyter pytest /tf/tests/ -v -m "not slow"
+  #
+  #     - name: Stop containers
+  #       if: always()
+  #       run: docker compose down
