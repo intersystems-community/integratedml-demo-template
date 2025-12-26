@@ -1,6 +1,6 @@
-# InterSystems IRIS Community Edition - updated December 2025
-# Using official InterSystems registry (valid license, multi-arch ARM64/AMD64)
-ARG IMAGE=containers.intersystems.com/intersystems/iris-community:latest-em
+# InterSystems IRIS Community Edition with ZPM - updated December 2025
+# Using intersystemsdc image with ZPM pre-installed (valid license, regularly updated)
+ARG IMAGE=intersystemsdc/iris-community:latest-em-zpm
 FROM $IMAGE
 LABEL maintainer="Thomas Dyar <Thomas.Dyar@intersystems.com>"
 
@@ -21,8 +21,7 @@ COPY data /data
 COPY src /data/src
 COPY iris.script /tmp/iris.script
 
-# Note: Data loading happens at container startup via iris.script
-# The iris.script is executed when the container starts for the first time
-
-# Copy iris.script to the location where it will be auto-executed at startup
-COPY iris.script /home/irisowner/iris.script
+# Run iris.script during build to install ZPM packages and load data
+RUN iris start IRIS \
+    && iris session IRIS < /tmp/iris.script \
+    && iris stop IRIS quietly

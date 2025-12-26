@@ -166,23 +166,20 @@ If you see the error:
 Error: Invalid Community Edition license, may have exceeded core limit.
 ```
 
-This typically occurs with **outdated Docker images**. The official IRIS Community Edition from `containers.intersystems.com` supports up to **20 CPU cores**. The `intersystemsdc/iris-ml-community` images on Docker Hub have **expired licenses** and should not be used.
+This typically occurs with **outdated Docker images**. The older `intersystemsdc/iris-ml-community` images on Docker Hub have **expired licenses** and should not be used.
 
-**Solution:** This template uses the official InterSystems Container Registry image which has a valid license. If you encounter this error, ensure your Dockerfile uses:
-```
-FROM containers.intersystems.com/intersystems/iris-community:latest-em
-```
+**Solution:** This template uses the regularly updated `intersystemsdc/iris-community:latest-em-zpm` image which includes ZPM (InterSystems Package Manager) and has a valid license supporting up to 20 CPU cores.
 
 ## Technology Stack
-- **InterSystems IRIS Community Edition** from official registry (supports up to 20 cores)
+- **InterSystems IRIS Community Edition** with ZPM (supports up to 20 cores)
 - **TensorFlow 2.16.1** with Jupyter
 - **Python** with intersystems-irispython DB-API driver
-- **AutoML** (intersystems-iris-automl)
+- **AutoML** (intersystems-iris-automl) installed via pip
 
 ## Changes in 2025 Update
 - Updated TensorFlow from 2.2.0 to 2.16.1
 - Switched from JDBC/PyODBC to DB-API driver (intersystems-irispython)
-- Switched to official InterSystems Container Registry (`containers.intersystems.com`)
+- Switched to `intersystemsdc/iris-community:latest-em-zpm` (regularly updated, includes ZPM)
 - Modernized docker-compose configuration
 - Added GitHub Actions CI/CD workflow
 - Updated all Python dependencies with version pinning
