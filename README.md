@@ -43,7 +43,7 @@ The template includes sample notebook files accessible at http://localhost:8896/
 - **[campaign-integratedml.ipynb](jupyter-samples/campaign-integratedml.ipynb)**: A simple connection to sample Marketing Campaign data, demonstrating IntegratedML including VALIDATE MODEL command usage.
 - **[readmission-integratedml.ipynb](jupyter-samples/readmission-integratedml.ipynb)**: Demonstrates IntegratedML on a hospital readmission prediction dataset.
 - **[biomedical-integratedml.ipynb](jupyter-samples/biomedical-integratedml.ipynb)**: Building and using an IntegratedML model with complex SQL queries using PREDICT() and PROBABILITY() functions.
-- **[ED_visit_90_day.ipynb](jupyter-samples/ED_visit_90_day.ipynb)**: Building and using an IntegratedML model to predict Emergency Department visits. *NOTE: This notebook requires external data and is not executable out of the box.*
+- **[ED_visit_90_day.ipynb](jupyter-samples/ED_visit_90_day.ipynb)**: Predicting 30-day hospital readmission using the UCI Diabetes 130-US Hospitals dataset (~100k records). Demonstrates train/test splitting, PREDICT(), PROBABILITY(), and VALIDATE MODEL.
 
 All notebooks use the **intersystems-irispython** DB-API driver for database connectivity.
 

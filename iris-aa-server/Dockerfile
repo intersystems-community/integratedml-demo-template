@@ -8,8 +8,12 @@ USER root
 RUN mkdir /data \
 	&& chown irisowner /data
 
-# Install IntegratedML AutoML provider from InterSystems registry
+# Install IntegratedML AutoML provider and its dependencies
+# matplotlib is required by AutoML for model visualization
 RUN pip3 install --break-system-packages --no-cache-dir \
+    --target /usr/irissys/mgr/python \
+    matplotlib && \
+    pip3 install --break-system-packages --no-cache-dir \
     --index-url https://registry.intersystems.com/pypi/simple \
     --target /usr/irissys/mgr/python \
     intersystems-iris-automl

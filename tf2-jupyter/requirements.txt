@@ -1,4 +1,5 @@
-# InterSystems IRIS DB-API driver
+# InterSystems IRIS DB-API driver (official package from PyPI)
+# https://pypi.org/project/intersystems-irispython/
 intersystems-irispython>=5.0.1
 
 # Data science essentials
@@ -13,4 +14,3 @@ ipywidgets>=8.0.0
 
 # Testing
 pytest>=7.0.0
-testcontainers-iris>=1.3.0

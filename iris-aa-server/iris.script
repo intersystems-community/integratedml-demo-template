@@ -15,6 +15,7 @@
  do ##class(community.csvgen).Generate("/data/readmission.csv",",","Patient.Readmission")
  do ##class(community.csvgen).Generate("/data/Campaign.csv",";","Marketing.Campaign")
  do ##class(community.csvgen).Generate("/data/breast-cancer.csv",",","Biomedical.BreastCancer")
+ do ##class(community.csvgen).Generate("/data/diabetic_readmission.csv",",","Diabetes.Readmission")
 
  // Load globals and build indices for the LoanPerformance table
  do $system.OBJ.Load("/data/loans.gof")
